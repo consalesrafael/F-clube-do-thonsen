@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entre para o Fã clube</title>
     <link rel="stylesheet" href="../css/main.css">
+    <script src="../JS/scrypt.js"></script>
 </head>
 <body>
     <header>
@@ -22,7 +23,7 @@
         <div>
             <h2>Entre para o Fã clube</h2>
         <p>Se tiver interesse em participar da comunidade mais unida e facinada do Gabriel Thonsem preencha o formulario</p>
-        <form name="frmfaLeconosco" method="get" action="#"></form>
+        <form name="frmfaleconosco" method="get" action="#" onsubmit="return validaFaleConosco()">
         <fieldset class="faleConosco">
             <legend>Dados pessoais:</legend>
             <label for="nome">Nome:</label>
@@ -31,11 +32,24 @@
             <input type="text" name="txtfone" id="fone">
             <label for="email">E-mail:</label>
             <input type="email" name="txtemail" id="email">
-            
+            <label for="escolha">Deseja Fazer uma doaçao?</label>
+        <select id="escolha" name="escolha" onchange="mostrarCampo()">
+            <option value="">Escolha</option>
+            <option value="nao">Não</option>
+            <option value="sim">Sim</option>
+        </select>
+
+        
+        <div id="campo-valor" class="hidden">
+            <label for="valor">Informe o valor:</label>
+            <input type="number" id="valor" name="txtvalor" placeholder="Digite o valor">
+        </div>
             <label for="comentario">Comentario:</label>
                         <textarea name="txacomentario" id="comentario"></textarea>
                         <button type="reset">limpar</button><button type="submit">enviar</button>
         </fieldset>
+    
+    </form>
         </div>
     </section>
     <footer>Copyrigth &copy; Rafael Consales</footer>
